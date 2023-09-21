@@ -1,0 +1,54 @@
+:root {
+    font-size: 62.5%;
+    --std: all 0.3s ease-in;
+}
+body {
+    width: 100vw;
+    font-size: 1.8rem; 
+    margin: 0 auto 1rem auto; /*-- top, right, bottom, left --*/
+    padding: 5px 10px; /*-- vertical, horizontal --*/
+}
+/*-- flex container --*/
+nav.main-nav {
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /*-- main axis --*/
+    align-items: center; /*-- cross axis --*/
+}
+/*-- flex item --*/
+a.nav-item {
+    justify-self: self-end;
+    align-self: flex-start;
+    flex: 0 1 auto; /*-- grow, shrink, auto --*/
+    transition: var(--std);
+}
+a.nav-item:last-of-type { /*-- last-of-type selector --*/
+    margin-left: auto;
+}
+.box {
+    position: relative; /*-- in flow --*/
+    left: lvw; /*-- from itself --*/
+    min-width: 200px; /*-- from itself --*/
+    max-height: 20rem;
+    border: 2px dashed #CCC;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 2px 2px 16px 1px #000;
+}
+.circle {
+    position: absolute;
+    top: 50px;
+    background-color: rgba(125, 125, 125, 0.9);
+    opacity: 0.9;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+span {
+    text-shadow: 1px 1px 6px #000;
+}
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+}
